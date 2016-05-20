@@ -1,6 +1,6 @@
 # mixtape
 
-This is a really, really sloppy way to play random mixtapes from archive.org's hiphopmixtapes collection. Any improvements are more than welcome. The OS X version has been tested, I'm assuming the other version will work fine on any system that has GNU sort as `sort`.
+This is a really, really sloppy way to play random mixtapes on the command line from archive.org's hiphopmixtapes collection. Any improvements are more than welcome. The OS X version has been tested, I'm assuming the other version will work fine on any system that has GNU sort as `sort`.
 
 
 ## dependencies
