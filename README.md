@@ -6,7 +6,9 @@ This is a really, really sloppy way to play random mixtapes from archive.org's h
 ## dependencies
 
 [ia] (http://developers.archive.org/services/ia-v1/)
+
 [mplayer] (http://www.mplayerhq.hu/design7/news.html)
+
 coreutils (this should be installed already on linux, but you'll need to `brew install coreutils` on OS X to get GNU sort)
 
 ## caveats
