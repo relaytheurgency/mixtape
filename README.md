@@ -4,7 +4,7 @@ This is a really, really sloppy way to play random mixtapes on the command line 
 
 ## dependencies
 
-[ia] (http://developers.archive.org/services/ia-v1/)
+[ia] (http://developers.archive.org/services/ia-v1/) (See below if you don't want to use ia)
 
 [mplayer] (http://www.mplayerhq.hu/design7/news.html)
 
