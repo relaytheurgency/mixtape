@@ -43,7 +43,7 @@ def random_mixtape():
         mixtapes.append(i['identifier'])
 
     # select a random mixtape
-    mixtape = mixtapes[randint(0,len(mixtapes))]
+    mixtape = mixtapes[randint(0,len(mixtapes) - 1)]
 
     return mixtape
 
@@ -52,13 +52,18 @@ def artist_mixtape(artist_search):
     mixtapes = []
     for i in artist_search:
         mixtapes.append(i['identifier'])
+    
+    if len(mixtapes) == 0:
+        print("Your search yielded no results! Try again!")
+        return artist_mixtape(search_artist(get_artist()))
+    else:
+        mixtape = mixtapes[randint(0,len(mixtapes) - 1)]
+        return mixtape
 
-    mixtape = mixtapes[randint(0,len(mixtapes))]
 
-    return mixtape
 
 def play_tape(mixtape):
-
+    print("Now playing " + mixtape)
     command = "mplayer -msgcolor -msglevel all=0:demux=5:statusline=5 -playlist http://archive.org/download/" + mixtape + "/" + mixtape + "_vbr.m3u 2>/dev/null"
     os.system(command)
 
