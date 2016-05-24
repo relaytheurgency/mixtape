@@ -1,5 +1,5 @@
 #!/usr/bin/python
-'''Play a random mixtaple from archive.org hiphopmixtapes collection using python and mplayer'''
+'''Play a random mixtape from archive.org hiphopmixtapes collection using python and mplayer'''
 
 '''Requires internetarchive module'''
 import internetarchive
@@ -9,16 +9,13 @@ import os
 
 def search_artist(artist_name):
     '''Search archive.org for tapes from an artist'''    
+
     artist_tapes = search_items('collection:hiphopmixtapes AND title:' + artist_name)
     
-    for tape in artist_tapes:
-        print tape['identifier']
-
     return artist_tapes
 
 
 def random_mixtape():
-    # create a list of all of the mixtapes available
 
     mixtapes=[]
 
