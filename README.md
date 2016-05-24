@@ -1,18 +1,23 @@
 # mixtape
 
-This is a really, really sloppy way to play random mixtapes on the command line from archive.org's hiphopmixtapes collection. Any improvements are more than welcome. The OS X version has been tested, I'm assuming the other version will work fine on any system that has GNU sort as `sort`.
+Archive.org has begun cataloging thousands of mixtapes from various collections on the web. This python script utilizes Archive.org's `internetarchive` python module to grab random mixtapes to play through mplayer.
 
 ## dependencies
 
-[ia] (http://developers.archive.org/services/ia-v1/) (See below if you don't want to use ia)
-
+[ia] (http://developers.archive.org/services/ia-v1/)
 [mplayer] (http://www.mplayerhq.hu/design7/news.html)
+python 2.7
+pip
 
-coreutils (this should be installed already on linux, but you'll need to `brew install coreutils` on OS X to get GNU sort)
+## instructions
+
+1. Download mplayer for your distribution/OS
+2. Register for an account at archive.org
+3. `pip install internetarchive`
+4. `ia configure`
+5. `git clone https://github.com/relaytheurgency/mixtape.git`
+6. `cd mixtape && ./mixtape.py`
 
 ## caveats
 
-You're going to have to CTRL-C twice in succession to exit because I was too lazy to do this appropriately (just wanted some tunes)!
-You'll want to register for an official account at archive.org and then run `ia configure` to get everything set up for this to work.
-
-UNLESS!! If you don't want to register an account you can use the 'sloppiest' scripts which use a terrible, terrible curl to get a random mixtape to play.
+I have included a bash script for those that don't want to register at archive.org. The caveat here is that this script uses a pretty sloppy `curl` and is not guaranteed to work for any forseeable future. To use the bash script just clone the repo and execute as you would any other script. It only requires mplayer if you're on linux. If you are on OS X you will need to `brew install coreutils`
