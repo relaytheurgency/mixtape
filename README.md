@@ -4,10 +4,8 @@ Archive.org has begun cataloging thousands of mixtapes from various collections 
 
 ## dependencies
 
-[ia] (http://developers.archive.org/services/ia-v1/)  
+[internetarchive] (https://internetarchive.readthedocs.io/en/latest/installation.html)  
 [mplayer] (http://www.mplayerhq.hu/design7/news.html)  
-python 2.7  
-pip  
 
 ## instructions
 
