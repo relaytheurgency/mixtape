@@ -1,9 +1,0 @@
-#!/bin/bash
-
-while true; do
-  mixtape=`curl -s  https://archive.org/advancedsearch.php\?q\=collection%3A%28hiphopmixtapes%29\&fl%5B%5D\=identifier\&sort%5B%5D\=\&sort%5B%5D\=\&sort%5B%5D\=\&rows\=100000\&page\=1\&output\=json\&callback\=callback\&save\=yes | grep identifier | cut -f2 -d ":" | cut -f2 -d "\"" | sort -R | head -n 1`
-  playlist="http://archive.org/download/${mixtape}/${mixtape}_vbr.m3u"
-  mplayer -msgcolor -msglevel all=0:demux=4:statusline=5 -playlist $playlist 2>/dev/null
-done
-
-exit 0

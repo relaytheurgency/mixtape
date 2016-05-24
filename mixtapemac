@@ -1,9 +1,0 @@
-#!/bin/bash
-
-while true; do
-  mixtape=`ia search collection:hiphopmixtapes -i | gsort -R | head -n 1`
-  playlist="http://archive.org/download/${mixtape}/${mixtape}_vbr.m3u"
-  mplayer -msgcolor -msglevel all=0:demux=4:statusline=5 -playlist $playlist 2>/dev/null
-done
-
-exit 0
