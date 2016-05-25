@@ -11,15 +11,21 @@ real_raw_input = vars(__builtins__).get('raw_input',input)
 
 def random_or_artist():
     
-    choice = real_raw_input("Would you like to a) Play a random mixtape or b) Choose an artist? (a/b): ")
+    choice = real_raw_input("Would you like to: \n\
+            a) Play a random mixtape \n\
+            b) Choose an artist? \n\
+            q) quit \n\
+            (a/b/q): ")
     
     if choice == "a":
         play_tape(random_mixtape())
     elif choice == "b":
         play_tape(artist_mixtape(search_artist(get_artist())))
+    elif choice == "q":
+        exit()
     else:
-        print("You didn't choose either, defaulting to random mixtape!")
-        play_tape(random_mixtape())
+        print("You didn't choose either. Please make a valid choice!")
+        random_or_artist()
 
 def get_artist():
     '''Get artist from user'''
@@ -69,5 +75,7 @@ def play_tape(mixtape):
     print("Now playing " + mixtape)
     command = "mplayer -msgcolor -msglevel all=0:demux=5:statusline=5 -playlist http://archive.org/download/" + mixtape + "/" + mixtape + "_vbr.m3u 2>/dev/null"
     os.system(command)
+    print("\n")
+    random_or_artist()
 
 random_or_artist()
