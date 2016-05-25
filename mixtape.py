@@ -61,7 +61,7 @@ def artist_mixtape(artist_search):
         return artist_mixtape(search_artist(get_artist()))
     else:
         print("Choose which mixtape you would like to play by entering the corresponding number:\n")
-        for i in xrange(len(mixtapes)):
+        for i in range(len(mixtapes)):
             print(str(i) + ". " + str(mixtapes[i]))
         
         choice = real_raw_input("Choice (b to search again): ")
