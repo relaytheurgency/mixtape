@@ -1,6 +1,6 @@
 # mixtape
 
-Archive.org has begun cataloging thousands of mixtapes from various collections on the web. This python script utilizes Archive.org's `internetarchive` python module to grab random mixtapes to play through mplayer.
+Archive.org has begun cataloging thousands of mixtapes from various collections on the web. This python script utilizes Archive.org's `internetarchive` python module to grab mixtapes to play through mplayer. Users can choose to either hear a random mixtape or select a mixtape from an artist search.
 
 ## dependencies
 
