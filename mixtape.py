@@ -11,11 +11,11 @@ real_raw_input = vars(__builtins__).get('raw_input',input)
 
 def random_or_artist():
     
-    choice = real_raw_input("Would you like to: \n\
-            a) Play a random mixtape \n\
-            b) Choose an artist? \n\
-            q) quit \n\
-            (a/b/q): ")
+    choice = real_raw_input("\
+Would you like to: \n\
+a) Play a random mixtape \n\
+b) Choose an artist? \n\
+q) quit (a/b/q): ")
     
     if choice == "a":
         play_tape(random_mixtape())
@@ -60,14 +60,19 @@ def artist_mixtape(artist_search):
         print("Your search yielded no results! Try again!")
         return artist_mixtape(search_artist(get_artist()))
     else:
-        print("Choose which mixtape you would like to play by entering the corresponding number:")
+        print("Choose which mixtape you would like to play by entering the corresponding number:\n")
         for i in xrange(len(mixtapes)):
-            print(str(i) + ". " + str(mixtapes[i] + "\n"))
+            print(str(i) + ". " + str(mixtapes[i]))
         
-        choice = real_raw_input("Choice: ")
-        mixtape = mixtapes[int(choice)]
-        return mixtape
-
+        choice = real_raw_input("Choice (b to search again): ")
+        if choice == "b":
+            return artist_mixtape(search_artist(get_artist()))
+        elif choice.isdigit() == False or (int(choice) < 0 or int(choice) > (len(mixtapes) - 1)):
+            print("Please enter a valid digit.")
+            return artist_mixtape(artist_search)
+        else:
+            mixtape = mixtapes[int(choice)]
+            return mixtape
 
 
 
