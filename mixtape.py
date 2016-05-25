@@ -1,7 +1,6 @@
 #!/usr/bin/python
 '''Play a random mixtape from archive.org hiphopmixtapes collection using python and mplayer'''
 
-'''Requires internetarchive module'''
 import internetarchive
 from random import randint
 import os
@@ -32,7 +31,6 @@ def search_artist(artist_name):
     '''Search archive.org for tapes from an artist'''    
 
     artist_tapes = internetarchive.search_items('collection:hiphopmixtapes AND title:' + artist_name)
-    
     return artist_tapes
 
 def random_mixtape():
@@ -44,7 +42,6 @@ def random_mixtape():
 
     # select a random mixtape
     mixtape = mixtapes[randint(0,len(mixtapes) - 1)]
-
     return mixtape
 
 def artist_mixtape(artist_search):
@@ -57,8 +54,14 @@ def artist_mixtape(artist_search):
         print("Your search yielded no results! Try again!")
         return artist_mixtape(search_artist(get_artist()))
     else:
-        mixtape = mixtapes[randint(0,len(mixtapes) - 1)]
+        print("Choose which mixtape you would like to play by entering the corresponding number:")
+        for i in xrange(len(mixtapes)):
+            print(str(i) + ". " + str(mixtapes[i] + "\n"))
+        
+        choice = real_raw_input("Choice: ")
+        mixtape = mixtapes[int(choice)]
         return mixtape
+
 
 
 
