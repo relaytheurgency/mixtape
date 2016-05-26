@@ -1,6 +1,5 @@
 #!/usr/bin/python
 '''Play a random mixtape from archive.org hiphopmixtapes collection using python and mplayer'''
-
 import internetarchive
 from random import randint
 import os
@@ -24,7 +23,7 @@ q) quit (a/b/q): ")
     elif choice == "q":
         exit()
     else:
-        print("You didn't choose either. Please make a valid choice!")
+        print("Please make a valid choice!")
         random_or_artist()
 
 def get_artist():
@@ -73,8 +72,6 @@ def artist_mixtape(artist_search):
         else:
             mixtape = mixtapes[int(choice)]
             return mixtape
-
-
 
 def play_tape(mixtape):
     print("Now playing " + mixtape)

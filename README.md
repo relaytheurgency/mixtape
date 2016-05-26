@@ -19,3 +19,10 @@ Archive.org has begun cataloging thousands of mixtapes from various collections 
 ## caveats
 
 I have included a bash script for those that don't want to register at archive.org. The caveat here is that this script uses a pretty sloppy `curl` and is not guaranteed to work for any forseeable future. To use the bash script just clone the repo and execute as you would any other script. It only requires mplayer if you're on linux. If you are on OS X you will need to `brew install coreutils`
+
+## future work
+* Command line options for things like continuous play of random tapes
+* Create mixtape from individual songs pulled from other mixtapes by criteria (artist, year, genre)
+* Better formatting
+* Bundle for pip install
+* Versions for python 2.x and 3.x that don't require hacky workarounds
