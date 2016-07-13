@@ -10,17 +10,17 @@ else
 fi
 
 if [[ "$os" == "Darwin" ]]; then
-    if hash gsort 2>/dev/null; then
-        sortcommand="gsort"
+    if hash gshuf 2>/dev/null; then
+        shufcommand="gshuf"
     else
         echo "You need to install coreutils!"
         exit 1
     fi
 elif [[ "$os" == "Linux" ]]; then
-    sortcommand="sort"
+    shufcommand="shuf"
 fi
 
-mixtape=`curl -s  https://archive.org/advancedsearch.php\?q\=collection%3A%28hiphopmixtapes%29\&fl%5B%5D\=identifier\&sort%5B%5D\=\&sort%5B%5D\=\&sort%5B%5D\=\&rows\=100000\&page\=1\&output\=json\&callback\=callback\&save\=yes | grep identifier | cut -f2 -d ":" | cut -f2 -d "\"" | $sortcommand -R | head -n 1`
+mixtape=`curl -s  https://archive.org/advancedsearch.php\?q\=collection%3A%28hiphopmixtapes%29\&fl%5B%5D\=identifier\&sort%5B%5D\=\&sort%5B%5D\=\&sort%5B%5D\=\&rows\=100000\&page\=1\&output\=json\&callback\=callback\&save\=yes | grep identifier | cut -f2 -d ":" | cut -f2 -d "\"" | $shufcommand | head -n 1`
 
 playlist="http://archive.org/download/${mixtape}/${mixtape}_vbr.m3u"
 
