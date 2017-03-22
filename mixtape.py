@@ -8,7 +8,7 @@ __email__ = "jones.brandon.lee@gmail.com"
 '''Play a random mixtape from archive.org hiphopmixtapes collection using python and mplayer'''
 import internetarchive
 from random import randint
-import os
+import subprocess
 
 # Handle input/raw_input switch so I don't have to worry about versions
 # for simple inputs
@@ -84,10 +84,14 @@ def artist_mixtape(artist_search):
 
 def play_tape(mixtape):
     '''Calls mplayer to play a mixtape'''
+    
+    url = "http://archive.org/download/" + mixtape + "/" + mixtape + "_vbr.m3u"
 
     print("Now playing " + mixtape)
-    command = "mplayer -msgcolor -msglevel all=0:demux=5:statusline=5 -playlist http://archive.org/download/" + mixtape + "/" + mixtape + "_vbr.m3u 2>/dev/null"
-    os.system(command)
+    
+    command = "mplayer -msgcolor -msglevel all=0:demux=5:statusline=5 -playlist " + url + " 2>/dev/null"
+    subprocess.call(command, shell=True)
+    
     print("\n")
 
     random_or_artist()
